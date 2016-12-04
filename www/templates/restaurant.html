@@ -1,0 +1,38 @@
+<ion-view view-title="Restaurante">
+	<ion-content>
+		<div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+			<div class="tabs">
+				<a class="tab-item active" href="#/app/restaurant">
+					<i class="icon ion-person-stalker"></i> Restaurante
+				</a>
+				<a class="tab-item" href="#/app/pedidos">
+					<i class="icon ion-ios-bell-outline"></i> Pedidos Listos
+				</a>
+				<a class="tab-item" href="#/app/cocina">
+					<i class="icon ion-flame"></i> Cocina
+				</a>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<div ng-show="$parent.viewNewClient==true">
+			<h2>Nuevo Cliente</h2>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Nombre Cliente</span>
+				<input type="text" placeholder="Nombre Cliente" ng-model="newClient.name">
+			</label>
+			<button class="button button-full button-balanced" ng-click="validate()">Agregar</button>
+		</div>
+		<div>
+			<ion-list>
+				<ion-item>
+					<button class="button button-full button-positive" ng-click="onViewNewClient()">Nuevo Cliente</button>
+				</ion-item>
+				<ion-item ng-repeat="client in clients">
+					{{client.name}}
+				</ion-item>
+			</ion-list>
+		</div>
+	</ion-content>
+</ion-view>

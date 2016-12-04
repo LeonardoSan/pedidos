@@ -1,0 +1,30 @@
+<ion-view view-title="Productos">
+	<ion-content>
+		<div ng-show="$parent.viewNewProduct==true">
+			<h2>Nuevo Producto</h2>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Nombre Producto</span>
+				<input type="text" placeholder="Nombre Producto" ng-model="newProduct.name">
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Precio Producto</span>
+				<input type="number" placeholder="Precio Producto" ng-model="newProduct.value">
+			</label>
+			<label class="item item-input item-floating-label">
+				<span class="input-label">Observaciones</span>
+				<input type="text" placeholder="Observaciones" ng-model="newProduct.observations">
+			</label>
+			<button class="button button-full button-balanced" ng-click="validate()">Agregar</button>
+		</div>
+		<div>
+			<ion-list>
+				<ion-item>
+					<button class="button button-full button-positive" ng-click="onViewNewProduct()">Nuevo Producto</button>
+				</ion-item>
+				<ion-item ng-repeat="product in products">
+					{{product.name}} / {{product.value}}
+				</ion-item>
+			</ion-list>
+		</div>
+	</ion-content>
+</ion-view>
